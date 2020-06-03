@@ -56,9 +56,10 @@ client.on('message', message => { // Activities code below when a message is sen
     if (mention != null) { //Checks if the message does not contain mentions
         if (foundInText == false) return; //Checks if the message contains mentions and if it does
     }
-
-    if (foundInText) message.delete();
-
+    
+    if (maintain == 'on') {
+        if (foundInText) message.delete();
+    }
 });
 
 client.login(process.env.token);
